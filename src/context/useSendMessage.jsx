@@ -11,7 +11,7 @@ function useSendMessage() {
         setLoading(true);
         try {
             const response = await axios.post(
-                `https://chat-app-frontend-amber-rho.vercel.app/api/message/send/${selectedConversation._id}`,
+                `https://chat-app-backend-tau-lemon.vercel.app/api/message/send/${selectedConversation._id}`,
                 { message },
                 { withCredentials: true }
             );
