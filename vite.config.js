@@ -12,7 +12,7 @@ export default defineConfig({
     port: 5173,
     proxy: {
       '/api': {
-        target: 'http://localhost:3000',
+        target: 'https://chat-app-backend-tau-lemon.vercel.app',
         changeOrigin: true,
       },
     },
