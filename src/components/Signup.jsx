@@ -28,7 +28,7 @@ function Signup() {
       confirmPassword: data.confirmPassword,
     };
     // console.log(userInfo);
-    axios.post("/api/user/signup", userInfo)
+    axios.post("https://chat-app-frontend-amber-rho.vercel.app/api/user/signup", userInfo)
     .then((response) => {
     //   console.log(response.data);  
       if (response.data) {
