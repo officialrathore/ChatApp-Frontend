@@ -10,7 +10,7 @@ function Logout() {
   const handleLogout = async() => {
      setLoading(true)
      try {
-        await axios.post("/api/user/logout");
+        await axios.post("https://chat-app-frontend-amber-rho.vercel.app/api/user/logout");
         localStorage.removeItem("ChatApp");
         Cookies.remove("jwt");
         setLoading(false);
