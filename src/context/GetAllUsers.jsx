@@ -12,7 +12,7 @@ function GetAllUsers() {
             try {
                 let token = cookies.get("jwt");
                 console.log("JWT Token:", token);
-                const response = await axios.get("https://chat-app-frontend-amber-rho.vercel.app/api/user/getAllUsers",{
+                const response = await axios.get("https://chat-app-backend-tau-lemon.vercel.app/api/user/getAllUsers",{
                     withCredentials: true,
                     headers: {
                         Authorization: `Bearer ${token}`,
