@@ -1,6 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import axios from "axios";
+import { api } from "../utils/axios";
 import { Link } from "react-router-dom";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
@@ -27,7 +27,7 @@ function Signup() {
       confirmPassword: data.confirmPassword,
     };
     // console.log(userInfo);
-    axios.post("/api/user/signup", userInfo)
+    api.post("/api/user/signup", userInfo)
     .then((response) => {
     //   console.log(response.data);  
       if (response.data) {

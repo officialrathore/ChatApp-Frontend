@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import api from '../utils/axios';
 import useConversation from '../zustand/useConversation';
 
 function useSendMessage() {
@@ -10,7 +10,7 @@ function useSendMessage() {
         if (!message || !selectedConversation?._id) return;
         setLoading(true);
         try {
-            const response = await axios.post(
+            const response = await api.post(
                 `/api/message/send/${selectedConversation._id}`,
                 { message },
                 { withCredentials: true }
