@@ -26,7 +26,6 @@ function Login() {
       if (response.data) {
        toast.success("Login successful!");
       }    
-      cookies.set("jwt", response.data.token);
       localStorage.setItem("ChatApp", JSON.stringify(response.data));
       
        setAuthUser(response.data); 
