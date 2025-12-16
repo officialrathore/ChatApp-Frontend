@@ -2,6 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import {api} from "../utils/axios";
 import { useAuth } from "../context/AuthProvider";
+import cookies from 'js-cookie';
 import { Link } from "react-router-dom";
 import toast from "react-hot-toast";
 
@@ -25,8 +26,9 @@ function Login() {
       if (response.data) {
        toast.success("Login successful!");
       }    
-         
+      cookies.set("jwt", response.data.token);
       localStorage.setItem("ChatApp", JSON.stringify(response.data));
+      
        setAuthUser(response.data); 
     })
     .catch((error) => {
