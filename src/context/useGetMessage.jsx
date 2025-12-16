@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import useConversation from '../zustand/useConversation';
-import api from '../utils/axios';
+import {api} from '../utils/axios';
 
 function useGetMessage() {
     const [loading, setLoading] = useState(false);

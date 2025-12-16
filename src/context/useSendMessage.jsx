@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import api from '../utils/axios';
+import {api} from '../utils/axios';
 import useConversation from '../zustand/useConversation';
 
 function useSendMessage() {

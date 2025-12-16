@@ -2,9 +2,9 @@
 import React,{ useState} from "react";
 import { BiLogOutCircle } from "react-icons/bi";
 import Cookies from "js-cookie";
-import {api} from "../utils/axios";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import {api} from "../../utils/axios";
 
 function Logout() {
   const [loading, setLoading] = useState(false);

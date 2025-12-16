@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import cookies from 'js-cookie';
-import api from '../utils/axios';
+import {api} from '../utils/axios';
 
 function GetAllUsers() {
      const [allUsers, setAllUsers] = useState([]);
