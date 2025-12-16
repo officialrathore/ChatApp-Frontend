@@ -19,7 +19,7 @@ function Login() {
       password: data.password,
     };
     // console.log(userInfo);
-    await axios.post("https://chat-app-backend-tau-lemon.vercel.app/api/user/login", userInfo)
+    await axios.post("/api/user/login", userInfo)
     .then((response) => {
     //   console.log(response.data);  
       if (response.data) {

@@ -14,7 +14,7 @@ export const SocketProvider = ({children})=>{
 
     useEffect(() => {
         if (authUser) {
-            const socket = io("https://chat-app-backend-tau-lemon.vercel.app", {
+            const socket = io(import.meta.env.VITE_API_URL, {
                 query: { userId: authUser.user.id },
                 withCredentials: true,
             });

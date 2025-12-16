@@ -1,12 +1,11 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
-import { useAuth } from "../context/AuthProvider";
 import { Link } from "react-router-dom";
 import toast from "react-hot-toast";
-
+import { useNavigate } from "react-router-dom";
 function Signup() {
-    const [authUser, setAuthUser] = useAuth();
+    const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -28,14 +27,13 @@ function Signup() {
       confirmPassword: data.confirmPassword,
     };
     // console.log(userInfo);
-    axios.post("https://chat-app-backend-tau-lemon.vercel.app/api/user/signup", userInfo)
+    axios.post("/api/user/signup", userInfo)
     .then((response) => {
     //   console.log(response.data);  
       if (response.data) {
         toast.success("Signup successful! Please login.");
-      }       
-      localStorage.setItem("ChatApp", JSON.stringify(response.data));
-      setAuthUser(response.data); // Update auth context
+      }
+      navigate("/login");       
     })
     .catch((error) => {
       if (error.response) {

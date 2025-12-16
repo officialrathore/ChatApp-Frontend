@@ -12,7 +12,7 @@ function useGetMessage() {
             if (selectedConversation && selectedConversation._id) {
                 
                 try {
-                    const response = await axios.get(`https://chat-app-backend-tau-lemon.vercel.app/api/message/get/${selectedConversation._id}`, {
+                    const response = await axios.get(`/api/message/get/${selectedConversation._id}`, {
                         withCredentials: true,
                     });
                     setMessages(response.data);
