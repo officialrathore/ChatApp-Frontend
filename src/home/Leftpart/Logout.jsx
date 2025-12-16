@@ -17,8 +17,8 @@ function Logout() {
     try {
       await api.post("/api/user/logout");
       localStorage.removeItem("ChatApp");
-      Cookies.remove("jwt"); // yahi sahi hai, path set kiya ho to same path do [web:45]
-      setAuthUser(null);     // IMPORTANT: context se user hatao
+      Cookies.remove("jwt"); 
+      setAuthUser(null);   
       toast.success("Logout successful");
       navigate("/login");
     } catch (error) {
